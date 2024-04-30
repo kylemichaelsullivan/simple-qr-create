@@ -1,0 +1,71 @@
+:root {
+	--black: #000000;
+	--light-gray: #eeeeee;
+	--dark-gray: #aaaaaa;
+}
+
+label,
+input[type='color'],
+input[type='submit'] {
+	cursor: pointer;
+}
+
+input[type='text'],
+input[type='number'] {
+	border-width: 1px;
+}
+
+input {
+	border: 1px solid var(--black);
+}
+
+input[type='color'] {
+	border-color: transparent;
+	width: 100%;
+	padding: 0;
+}
+
+input[type='submit'] {
+	transition: 250ms linear;
+	&:hover,
+	&:focus {
+		background-color: var(--dark-gray);
+		border-color: var(--black);
+	}
+}
+
+form {
+	background-color: var(--light-gray);
+}
+
+form input {
+	padding: 0.5rem;
+}
+
+label:hover input {
+	border-color: var(--black);
+}
+
+label .error {
+	color: red;
+	font-style: italic;
+	padding-left: 0.5em;
+}
+
+#qr-form {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 1rem;
+	border-width: 1px;
+	padding: 1rem;
+}
+
+#qr-form label {
+	display: flex;
+	flex-flow: column nowrap;
+	flex: auto;
+}
+
+#qr ~ p {
+	font-family: monospace;
+}
