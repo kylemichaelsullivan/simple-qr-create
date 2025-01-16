@@ -85,7 +85,7 @@ function Form() {
 				</label>
 			</div>
 
-			<input type='submit' onClick={(e) => e.currentTarget.blur()} />
+			<input type='submit' title='Submit' onClick={(e) => e.currentTarget.blur()} />
 		</form>
 	);
 }
