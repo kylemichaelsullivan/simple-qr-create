@@ -24,7 +24,7 @@ function Body() {
 
 	return (
 		<FormContext.Provider value={{ formData, setFormData }}>
-			<div className='Body flex flex-col gap-4 justify-center'>
+			<div className='Body flex flex-col justify-center gap-4'>
 				<Form />
 				<QR />
 			</div>

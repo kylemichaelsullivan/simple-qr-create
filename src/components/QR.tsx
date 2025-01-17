@@ -33,7 +33,7 @@ function QR() {
 		formData.value && (
 			<a
 				href={pngUrl}
-				className='mx-auto transition transition-300 hover:ring-4'
+				className='transition-300 mx-auto transition hover:ring-4'
 				download={`${id}.png`}
 				title='Download QR Code'
 			>
