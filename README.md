@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# Simple QR Create
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small browser app for turning any text or URL into a QR code, with customizable size and colors and a one-click PNG download.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Encode anything** — Enter plain text or a URL; the QR updates when you submit the form.
+- **Style** — Set foreground and background colors and the width/height in pixels (default size is 128px).
+- **Export** — After submitting, the preview doubles as a download link for a PNG named with a short unique id.
 
-## Expanding the ESLint configuration
+Everything runs in the client; nothing is sent to a server.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Stack
 
-- Configure the top-level `parserOptions` property like this:
+- [React](https://react.dev/) 18 + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) for dev and production builds
+- [Tailwind CSS](https://tailwindcss.com/) for layout and styling
+- [react-hook-form](https://react-hook-form.com/) for the form
+- [react-qr-code](https://github.com/rosskhanas/react-qr-code) for rendering
+- [html-to-image](https://github.com/bubkoo/html-to-image) for PNG export
 
-```js
-export default {
-	// other rules...
-	parserOptions: {
-		ecmaVersion: 'latest',
-		sourceType: 'module',
-		project: ['./tsconfig.json', './tsconfig.node.json'],
-		tsconfigRootDir: __dirname,
-	},
-};
-```
+## Requirements
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Node.js (LTS recommended)
+
+## Scripts
+
+| Command      | Description                          |
+| ------------ | ------------------------------------ |
+| `npm install` | Install dependencies                 |
+| `npm run dev` | Start the dev server (with HMR)      |
+| `npm run build` | Type-check and build for production |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | Run ESLint                           |
+
+## Project layout
+
+- `src/App.tsx` — App shell and page title
+- `src/components/` — `Form`, `QR`, `Body` (state + context), `Title`
+- `src/placeholders.ts` — Default colors, size, and input placeholder text
+
+## License
+
+Private project (`"private": true` in `package.json`).
