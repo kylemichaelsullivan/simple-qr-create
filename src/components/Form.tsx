@@ -11,8 +11,6 @@ import {
 import type { Color } from '../types';
 import { FormContext } from './Body';
 
-import '../styles.css';
-
 export type FormData = {
 	bgColor: Color;
 	fgColor: Color;

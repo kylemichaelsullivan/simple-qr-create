@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState, useRef } from 'react';
-import QRCode from 'react-qr-code';
 import { toPng } from 'html-to-image';
-
-import { FormContext } from './Body';
+import { useContext, useEffect, useRef, useState } from 'react';
+import QRCode from 'react-qr-code';
 import { makeID } from '../scripts';
+import { FormContext } from './Body';
 
 function QR() {
 	// @ts-ignore
@@ -27,13 +26,13 @@ function QR() {
 					console.error(err);
 				});
 		}
-	}, [formData, id]);
+	}, [formData]);
 
 	return (
 		formData.value && (
 			<a
 				href={pngUrl}
-				className='transition-300 mx-auto transition hover:ring-4'
+				className='mx-auto transition transition-300 hover:ring-4'
 				download={`${id}.png`}
 				title='Download QR Code'
 			>
